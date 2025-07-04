@@ -1,0 +1,252 @@
+
+
+/* Общий сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Шапка сайта */
+.site-header {
+  background-color: #111;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  color: #ff4500;
+}
+
+.burger-icon {
+  font-size: 2em;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+}
+
+/* Боковая навигационная панель */
+.side-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  background-color: #222;
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 999;
+}
+
+#burger-menu-toggle:checked ~ .side-nav {
+  transform: translateX(0);
+}
+
+.close-btn {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.side-header h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.side-list li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.side-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Карточки товаров */
+.product-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
+}
+
+.product-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  background-color: #333;
+  color: white;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card p {
+  font-size: 14px;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card strong {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card button.buy-button {
+  cursor: pointer;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: transform .3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card button.buy-button:hover {
+  transform: scale(1.1);
+}
+
+/* Эффект неоновой подсветки */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff00ff, #000000);
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff00ff, #000000);
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 8px;
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Таблица корзины */
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#cart-table th,
+#cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+#total-amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: transform .3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+/* Изображение героя */
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Футер */
+.site-footer {
+  background-color: #111;
+  text-align: center;
+  padding: 10px;
+  clear: both;
+}
+
+/* Баннер уведомлений */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  z-index: 1000;
+}

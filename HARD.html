@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Корзина — Anime Dead Inside</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Бургер меню -->
+  <input type="checkbox" id="burger-menu-toggle"/>
+  <label for="burger-menu-toggle" class="burger-icon">☰</label>
+  <aside class="side-nav">
+    <header class="side-header">
+      <span class="close-btn" onclick="document.getElementById('burger-menu-toggle').checked=false;">✖️</span>
+      <h2>Anime Dead Inside</h2>
+    </header>
+    <ul class="side-list">
+<li><a href="index.html" style="color: black; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;">Главная</a></li>
+      <li><a href="contacts.html" style="color: black; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;">Контакты</a></li>
+      <li><a href="about.html" style="color: black; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;">О нас</a></li>
+      <li><a href="products.html" style="color: black; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;">Товары</a></li>
+      <li><a href="HARD.html" style="color: black; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;">Корзина</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <h1>Корзина</h1>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Название товара</th>
+          <th>Цена</th>
+          <th>Количество</th>
+          <th>Сумма</th>
+          <th>Действие</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Здесь будут добавляться товары -->
+      </tbody>
+    </table>
+    <div id="total-amount"></div>
+    <button onclick="checkout()">Оформить заказ</button>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
